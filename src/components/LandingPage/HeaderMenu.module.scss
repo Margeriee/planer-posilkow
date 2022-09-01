@@ -1,0 +1,20 @@
+@use "../../settings/colors.module.scss" as c;
+@use "../../settings/spacing.module.scss" as s;
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+
+  li {
+    color: c.$white;
+    font-weight: 700; //ToDo: const
+    margin-left: s.$s7;
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+      color: c.$purple;
+    }
+  }
+}
