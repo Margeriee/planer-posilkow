@@ -13,7 +13,7 @@ export enum Type {
 
 type typographyProps = {
   type: string;
-  children: React.ReactNode;
+  children: string;
 };
 
 export const Typography = (props: typographyProps) => {
