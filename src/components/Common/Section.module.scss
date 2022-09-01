@@ -1,5 +1,7 @@
+@use "../../settings/colors.module.scss" as c;
+@use "../../settings/spacing.module.scss" as s;
+
 .section {
   width: 100%;
-  padding: 40px 10%;
-  box-sizing: border-box; //ToDo: import reset
+  padding: s.$s5+s.$s4 10%;
 }

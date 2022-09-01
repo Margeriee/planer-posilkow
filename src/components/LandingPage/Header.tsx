@@ -5,7 +5,7 @@ import { HeaderMenu } from "./HeaderMenu";
 export const Header = () => {
   return (
     <header className={styles.header}>
-      <h1>ZaplanujPosiłek</h1>
+      <h1><p>Zaplanuj</p>Posiłek</h1>
       <HeaderMenu />
     </header>
   );
