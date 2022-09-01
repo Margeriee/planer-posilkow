@@ -1,9 +1,9 @@
-@use "../../settings/colors.module.scss" as colors;
+@use "../../settings/colors.module.scss" as c;
 
 .header {
   width: 100%;
   padding: 15px 10%;
-  background-color: colors.$orange;
+  background-color: c.$orange;
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -1,9 +1,9 @@
 import React from "react";
-import "./HeaderMenu.scss";
+import styles from "./HeaderMenu.module.scss";
 
 export const HeaderMenu = () => {
   return (
-    <ul className="menu">
+    <ul className={styles.menu}>
       <li>Zaplanuj Posiłki</li>
       <li>Dlaczego warto?</li>
       <li>O mnie</li>
