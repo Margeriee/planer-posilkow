@@ -1,5 +1,6 @@
 @use "../../settings/colors.module.scss" as c;
 @use "../../settings/spacing.module.scss" as s;
+@use "../../settings/fonts.module.scss" as f;
 
 .menu {
   display: flex;
@@ -8,7 +9,7 @@
 
   li {
     color: c.$white;
-    font-weight: 700; //ToDo: const
+    font-weight: f.$highWeight;
     margin-left: s.$s7;
     text-transform: uppercase;
 

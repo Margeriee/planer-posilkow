@@ -2,9 +2,8 @@ import React from "react";
 import styles from "./Section.module.scss";
 
 export enum Colors {
-  grey = "grey",
-  lightGrey = "lightgrey",
-  darkGrey = "darkgrey",
+  lightOrange = "lightOrange",
+  beige = "beige",
 }
 
 type sectionProps = {
