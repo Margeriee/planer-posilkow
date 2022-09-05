@@ -1,6 +1,7 @@
 import React from "react";
 import { BenefitsSection } from "./BenefitsSection";
-import { Carousel, CarouselItem } from "./Carousel";
+import { Carousel } from "./CarouselSection/Carousel";
+import { CarouselItem } from "./CarouselSection/CarouselItem";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { MoveToApp } from "./MoveToApp";
