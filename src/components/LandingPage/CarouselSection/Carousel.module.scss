@@ -1,24 +1,47 @@
 // @use "../../settings/spacing.module.scss" as s;
 
-.carousel {
+// .carousel {
+//   overflow: hidden;
+// }
+
+// .inner {
+//   white-space: nowrap;
+//   transition: transform 0.3s;
+// }
+
+// .indicators {
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .indicators > button {
+//   margin: 5px;
+// }
+
+// .indicators > button.active {
+//   background-color: green;
+//   color: #fff;
+// }
+
+.root {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: relative;
   overflow: hidden;
+  width: 500px;
+  height: 300px;
 }
 
-.inner {
-  white-space: nowrap;
-  transition: transform 0.3s;
-}
-
-.indicators {
+.carousel {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  height: 100%; // ToDo: change to const
+  list-style: none;
 }
 
-.indicators > button {
-  margin: 5px;
-}
-
-.indicators > button.active {
-  background-color: green;
-  color: #fff;
+.slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
 }
