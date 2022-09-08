@@ -1,6 +1,5 @@
 import { Colors, Section } from "../../Common/Section";
 import { Carousel } from "./Carousel";
-import { CarouselItem } from "./CarouselItem";
 import styles from "./Carousel.module.scss"
 
 import Food1 from "../../../assets/Food1.jpg";
