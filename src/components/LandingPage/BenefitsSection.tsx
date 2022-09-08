@@ -4,7 +4,7 @@ import "./BenefitsSection.scss";
 
 export const BenefitsSection = () => {
   return (
-    <Section backgroundColor={Colors.darkGrey}>
+    <Section backgroundColor={Colors.beige}>
       <div>Text 1</div>
       <div>Text 2</div>
       <div>Text 3</div>

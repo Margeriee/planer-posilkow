@@ -4,7 +4,7 @@ import styles from "./MoveToApp.module.scss";
 
 export const MoveToApp = () => {
   return (
-    <Section backgroundColor={Colors.grey}>
+    <Section backgroundColor={Colors.lightOrange}>
       <div className={styles.moveToApp}>
         <div>
           Lorem Ipsum is simply dummy text of the printing and typesetting
