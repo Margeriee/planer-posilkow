@@ -1,11 +1,14 @@
 import {
   Children,
+  useCallback,
   useEffect,
   useLayoutEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Carousel.module.scss";
 
 type carouselProps = {
@@ -16,32 +19,39 @@ export const Carousel = (props: carouselProps) => {
   const { children } = props;
   const [current, setCurrent] = useState(1);
   const [translateX, setTranslateX] = useState(0);
+  const [paused, setPaused] = useState(false);
   const containerRef = useRef(null);
 
-  const actionHandler = (mode: string) => {
-    // @ts-ignore
-    containerRef.current.style.transitionDuration = "400ms";
-    if (mode === "prev") {
-      if (current <= 1) {
-        setTranslateX(0);
-        setCurrent(children.length);
-      } else {
-        // @ts-ignore
-        setTranslateX(containerRef.current.clientWidth * (current - 1));
-        setCurrent((prev) => --prev);
+  const actionHandler = useCallback(
+    (mode: string) => {
+      // @ts-ignore
+      containerRef.current.style.transitionDuration = "400ms";
+
+      if (mode === "previous") {
+        if (current <= 1) {
+          setTranslateX(0);
+          setCurrent(children.length);
+        } else {
+          // @ts-ignore
+          setTranslateX(containerRef.current.clientWidth * (current - 1));
+          setCurrent((prev) => --prev);
+        }
+      } else if (mode === "next") {
+        if (current >= children.length) {
+          setTranslateX(
+            // @ts-ignore
+            containerRef.current.clientWidth * (children.length + 1)
+          );
+          setCurrent(1);
+        } else {
+          // @ts-ignore
+          setTranslateX(containerRef.current.clientWidth * (current + 1));
+          setCurrent((prev) => ++prev);
+        }
       }
-    } else if (mode === "next") {
-      if (current >= children.length) {
-        // @ts-ignore
-        setTranslateX(containerRef.current.clientWidth * (children.length + 1));
-        setCurrent(1);
-      } else {
-        // @ts-ignore
-        setTranslateX(containerRef.current.clientWidth * (current + 1));
-        setCurrent((prev) => ++prev);
-      }
-    }
-  };
+    },
+    [current, children]
+  );
 
   useEffect(() => {
     const transitionEnd = () => {
@@ -66,6 +76,20 @@ export const Carousel = (props: carouselProps) => {
       document.removeEventListener("transitionend", transitionEnd);
     };
   }, [current, children]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!paused) {
+        actionHandler("next");
+      }
+    }, 5000);
+
+    return () => {
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
+  });
 
   const slides = useMemo(() => {
     if (children.length > 1) {
@@ -95,7 +119,11 @@ export const Carousel = (props: carouselProps) => {
   }, []);
 
   return (
-    <div className={styles.root}>
+    <div
+      className={styles.root}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <ul
         ref={containerRef}
         className={styles.carousel}
@@ -105,18 +133,16 @@ export const Carousel = (props: carouselProps) => {
       >
         {slides}
       </ul>
-      <button
+      <FontAwesomeIcon
         className={`${styles.button} ${styles.buttonLeft}`}
-        onClick={() => actionHandler("prev")}
-      >
-        {"<"}
-      </button>
-      <button
+        onClick={() => actionHandler("previous")}
+        icon={faAngleLeft}
+      />
+      <FontAwesomeIcon
         className={`${styles.button} ${styles.buttonRight}`}
         onClick={() => actionHandler("next")}
-      >
-        {">"}
-      </button>
+        icon={faAngleRight}
+      />
     </div>
   );
 };

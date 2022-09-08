@@ -1,42 +1,23 @@
-// @use "../../settings/spacing.module.scss" as s;
+@use "../../../settings/colors.module.scss" as c;
 
-// .carousel {
-//   overflow: hidden;
-// }
+$arrowWidth: 50px;
+$slideWidth: 500px;
+$slideHight: 300px;
 
-// .inner {
-//   white-space: nowrap;
-//   transition: transform 0.3s;
-// }
-
-// .indicators {
-//   display: flex;
-//   justify-content: center;
-// }
-
-// .indicators > button {
-//   margin: 5px;
-// }
-
-// .indicators > button.active {
-//   background-color: green;
-//   color: #fff;
-// }
+.test {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
 
 .root {
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  position: relative;
   overflow: hidden;
-  width: 500px;
-  height: 300px;
+  width: $slideWidth;
+  height: $slideHight;
 }
 
 .carousel {
   display: flex;
-  width: 100%;
-  height: 100%; // ToDo: change to const
   list-style: none;
 }
 
@@ -49,19 +30,16 @@
 .button {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  background-color: red;
-  color: yellow;
-  font-size: 2.5rem; //ToDo: change for const
-  border-width: 0;
+  color: c.$purple;
+  font-size: $arrowWidth;
   cursor: pointer;
-  width: 50px;
+  width: $arrowWidth;
 }
 
 .buttonLeft {
-  left: 0;
+  transform: translate(-(2 * $arrowWidth), -50%);
 }
 
 .buttonRight {
-  right: 0;
+  transform: translate($slideWidth + $arrowWidth, -50%);
 }
