@@ -1,5 +1,5 @@
 import React from "react";
-import "./Section.scss";
+import styles from "./Button.module.scss";
 
 export enum Colors {
   grey = "grey",
@@ -10,13 +10,18 @@ export enum Colors {
 type buttonProps = {
   children: string;
   backgroundColor?: Colors;
+  onClick: any;
 };
 
 export const Button = (props: buttonProps) => {
-  const { children, backgroundColor = Colors.lightGrey } = props;
+  const { children, backgroundColor = Colors.lightGrey, onClick } = props;
 
   return (
-    <button style={{ backgroundColor: backgroundColor }}>
+    <button
+      onClick={onClick}
+      // style={{ backgroundColor: backgroundColor }}
+      className={styles.button}
+    >
       {children}
     </button>
   );

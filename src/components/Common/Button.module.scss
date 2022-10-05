@@ -1,0 +1,17 @@
+@use "../../settings/colors.module.scss" as c;
+@use "../../settings/spacing.module.scss" as s;
+@use "../../settings/fonts.module.scss" as f;
+
+.button {
+  background-color: c.$purple;
+  color: c.$white;
+  text-transform: uppercase;
+  font-weight: f.$highWeight;
+  border: none;
+  border-radius: s.$s2;
+  padding: s.$s3 s.$s4;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
