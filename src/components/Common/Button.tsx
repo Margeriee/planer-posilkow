@@ -1,22 +1,18 @@
-import React from "react";
-import "./Section.scss";
-
-export enum Colors {
-  grey = "grey",
-  lightGrey = "lightgrey",
-  darkGrey = "darkgrey",
-}
+import styles from "./Button.module.scss";
 
 type buttonProps = {
   children: string;
-  backgroundColor?: Colors;
+  onClick: any;
 };
 
 export const Button = (props: buttonProps) => {
-  const { children, backgroundColor = Colors.lightGrey } = props;
+  const { children, onClick } = props;
 
   return (
-    <button style={{ backgroundColor: backgroundColor }}>
+    <button
+      onClick={onClick}
+      className={styles.button}
+    >
       {children}
     </button>
   );

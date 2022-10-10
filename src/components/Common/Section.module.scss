@@ -1,7 +1,9 @@
 @use "../../settings/colors.module.scss" as c;
 @use "../../settings/spacing.module.scss" as s;
 
+$sectionPadding: 56px;
+
 .section {
   width: 100%;
-  padding: s.$s5 + s.$s4 10%;
+  padding: $sectionPadding 10%;
 }

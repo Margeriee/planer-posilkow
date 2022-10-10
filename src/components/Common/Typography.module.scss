@@ -1,39 +1,15 @@
 @use "../../settings/colors.module.scss" as c;
 @use "../../settings/spacing.module.scss" as s;
 
-.BodyF10S14 {
-  font-size: 10px;
-  line-height: 14px;
-  font-weight: 400;
-}
-
-.BodyF11S14 {
-  font-size: 11px;
-  line-height: 14px;
-  font-weight: 400;
-}
-
-.BodyF12S16 {
+.BodyF12S24 {
   font-size: 12px;
-  line-height: 16px;
+  line-height: 24px;
   font-weight: 400;
 }
 
-.BodyF14S16 {
+.BodyF14S24 {
   font-size: 14px;
-  line-height: 16px;
-  font-weight: 400;
-}
-
-.BodyF16S18 {
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 400;
-}
-
-.BodyF16S20 {
-  font-size: 16px;
-  line-height: 20px;
+  line-height: 24px;
   font-weight: 400;
 }
 
