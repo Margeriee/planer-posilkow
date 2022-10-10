@@ -1,12 +1,9 @@
 import React from "react";
+import styles from "./Typography.module.scss";
 
-export enum Type {
-  BodyF10S14 = "BodyF10S14",
-  BodyF11S14 = "BodyF11S14",
-  BodyF12S16 = "BodyF12S16",
-  BodyF14S16 = "BodyF14S16",
-  BodyF16S18 = "BodyF16S18",
-  BodyF16S20 = "BodyF16S20",
+export enum TType {
+  BodyF12S24 = "BodyF12S24", // ToDo: is not used
+  BodyF14S24 = "BodyF14S24", // ToDo: is not used
   BodyF18S24 = "BodyF18S24",
   BodyF20S24 = "BodyF20S24",
 }
@@ -19,5 +16,5 @@ type typographyProps = {
 export const Typography = (props: typographyProps) => {
   const { type, children } = props;
 
-  return <p className={type}>{children}</p>;
+  return <p className={styles[`${type}`]}>{children}</p>;
 };

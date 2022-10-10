@@ -8,8 +8,8 @@
   text-transform: uppercase;
   font-weight: f.$highWeight;
   border: none;
-  border-radius: s.$s2;
-  padding: s.$s3 s.$s4;
+  border-radius: s.$spacing-s2;
+  padding: s.$spacing-s4 s.$spacing-s5;
 
   &:hover {
     cursor: pointer;
